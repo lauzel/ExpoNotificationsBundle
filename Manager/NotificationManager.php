@@ -281,7 +281,7 @@ class NotificationManager
             return $exceptionResponseArray;
         }
 
-        $responseData = json_decode($response->getBody()->read(1024), true);
+        $responseData = json_decode($response->getBody()->getContents(), true);
 
         return $responseData['data'];
     }
